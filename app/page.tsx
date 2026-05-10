@@ -391,7 +391,7 @@ function Testimonials() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0 }}
-              variants={fadeIn}
+              variants={fadeUp}
               custom={i * 0.5}
             >
               <StarRating />
