@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Brand */}
           <div>
-            <h3 className="text-lg font-black mb-3 tracking-wide" style={{ fontFamily: "'Roboto Condensed', sans-serif" }}>
+            <h3 className="text-lg font-black mb-3 tracking-wide">
               Twin Falls Hardware
             </h3>
             <p className="text-gray-300 text-sm mb-4 leading-relaxed">
@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Column 2: Products */}
           <div>
-            <h3 className="text-lg font-black mb-3 tracking-wide" style={{ fontFamily: "'Roboto Condensed', sans-serif" }}>
+            <h3 className="text-lg font-black mb-3 tracking-wide">
               Products
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Column 3: Services */}
           <div>
-            <h3 className="text-lg font-black mb-3 tracking-wide" style={{ fontFamily: "'Roboto Condensed', sans-serif" }}>
+            <h3 className="text-lg font-black mb-3 tracking-wide">
               Services
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Column 4: Company */}
           <div>
-            <h3 className="text-lg font-black mb-3 tracking-wide" style={{ fontFamily: "'Roboto Condensed', sans-serif" }}>
+            <h3 className="text-lg font-black mb-3 tracking-wide">
               Company
             </h3>
             <ul className="space-y-2 text-sm text-gray-300">
@@ -76,7 +76,7 @@ export default function Footer() {
       <div className="border-t border-gray-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-center text-gray-400 text-sm">
-            &copy; 2024 Twin Falls Hardware &amp; Supply. All rights reserved.
+            &copy; {new Date().getFullYear()} Twin Falls Hardware &amp; Supply. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ShoppingCartIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useCart } from '@/lib/cart-context'
 
@@ -18,13 +18,21 @@ export default function Header() {
   const { itemCount, setIsOpen } = useCart()
   const [mobileOpen, setMobileOpen] = useState(false)
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-black text-[#B91C1C]" style={{ fontFamily: "'Roboto Condensed', sans-serif" }}>TFH</span>
+            <span className="text-2xl font-black text-[#B91C1C]">TFH</span>
             <span className="text-sm font-semibold text-[#374151] hidden sm:block leading-tight">
               Twin Falls<br />Hardware
             </span>
@@ -53,7 +61,7 @@ export default function Header() {
               <ShoppingCartIcon className="w-6 h-6" />
               {itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#B91C1C] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {itemCount}
+                  {itemCount > 9 ? '9+' : itemCount}
                 </span>
               )}
             </button>
