@@ -123,7 +123,7 @@ function CategoryGrid() {
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-4xl font-bold uppercase text-[#374151] mb-10 text-center"
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={{ once: true, amount: 0 }}
           variants={fadeUp}
@@ -136,7 +136,7 @@ function CategoryGrid() {
           {categories.map((cat, i) => (
             <motion.div
               key={cat.id}
-              initial="hidden"
+              initial={false}
               whileInView="visible"
               viewport={{ once: true, amount: 0 }}
               variants={fadeUp}
@@ -239,7 +239,7 @@ function FeaturedProducts() {
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="text-4xl font-bold uppercase text-[#374151] mb-10 text-center"
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={{ once: true, amount: 0 }}
           variants={fadeUp}
@@ -252,7 +252,7 @@ function FeaturedProducts() {
           {featured.map((product, i) => (
             <motion.div
               key={product.id}
-              initial="hidden"
+              initial={false}
               whileInView="visible"
               viewport={{ once: true, amount: 0 }}
               variants={fadeUp}

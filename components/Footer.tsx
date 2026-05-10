@@ -14,7 +14,7 @@ export default function Footer() {
               Family-owned hardware store serving Twin Falls, Idaho since 1987.
             </p>
             <address className="text-gray-300 text-sm not-italic space-y-1">
-              <p>123 Main Ave N</p>
+              <p>2180 Addison Ave W</p>
               <p>Twin Falls, ID 83301</p>
               <p>
                 <a href="tel:+12085550211" className="hover:text-white transition-colors">
@@ -24,9 +24,8 @@ export default function Footer() {
             </address>
             <div className="mt-3 text-gray-300 text-sm">
               <p className="font-semibold text-white">Hours</p>
-              <p>Mon–Fri: 7am–6pm</p>
-              <p>Sat: 8am–5pm</p>
-              <p>Sun: 9am–3pm</p>
+              <p>Mon–Sat: 7:00 AM – 6:00 PM</p>
+              <p>Sun: 9:00 AM – 4:00 PM</p>
             </div>
           </div>
 

@@ -98,7 +98,7 @@ export const products: Product[] = [
     unit: 'each',
     description: 'Lead-free wrought copper pressure fitting, 90-degree elbow, 1/2" sweat connections. C x C ends for soldered connections. Meets ASTM B16.22 and NSF/ANSI 61 standards for potable water. Compatible with type K, L, and M copper tubing.',
     inStock: false,
-    image: '4bHMwthk8pc',
+    image: 'photo-4bHMwthk8pc',
     featured: false,
   },
   {
@@ -110,7 +110,7 @@ export const products: Product[] = [
     unit: 'each',
     description: 'Genuine Moen 1225 replacement cartridge for single-handle faucets. Fixes dripping, hard-to-turn handles, and hot/cold reversal. Fits most Moen single-handle kitchen and bathroom faucets made after 1979. Includes cartridge puller tool. Lifetime limited warranty.',
     inStock: true,
-    image: '4bHMwthk8pc',
+    image: 'photo-4bHMwthk8pc',
     featured: true,
   },
   {
@@ -122,7 +122,7 @@ export const products: Product[] = [
     unit: 'each',
     description: 'Schedule 40 PVC DWV P-trap, 1-1/2" diameter. White. Hub x Hub connections for solvent-welded installation. Meets ASTM D2665 for drain, waste, and vent applications. Standard residential P-trap for bathroom sinks, laundry, and utility applications.',
     inStock: true,
-    image: '4bHMwthk8pc',
+    image: 'photo-4bHMwthk8pc',
     featured: false,
   },
 
@@ -250,7 +250,7 @@ export const products: Product[] = [
     unit: 'per lb',
     description: 'Coarse thread #8 x 1-1/2" Phillips drive wood screws, sold by the pound. Zinc-plated for interior use. Flat head with bugle design drives flush without a pilot hole in soft wood. Approximately 100 screws per pound. Also available in 5 lb and 25 lb bulk.',
     inStock: true,
-    image: '0jnmSeGzRRg',
+    image: 'photo-0jnmSeGzRRg',
     featured: true,
   },
   {
@@ -262,7 +262,7 @@ export const products: Product[] = [
     unit: 'per lb',
     description: 'Hot-dipped galvanized 16d common nails, 3-1/2" x 0.162" diameter. 5 lb box, approximately 150 nails. HDG coating rated for pressure-treated lumber and outdoor use. For structural framing, decking, and treated-wood applications where corrosion resistance matters.',
     inStock: true,
-    image: '0jnmSeGzRRg',
+    image: 'photo-0jnmSeGzRRg',
     featured: false,
   },
   {
@@ -274,7 +274,7 @@ export const products: Product[] = [
     unit: 'each',
     description: 'Grade 5 zinc-plated hex cap screw, 3/8"-16 thread x 1" length. Medium carbon steel, proof load 85,000 PSI. Fully threaded. Sold individually — buy exactly what you need, or ask about bulk pricing. Matching nuts, washers, and lock washers available.',
     inStock: true,
-    image: '0jnmSeGzRRg',
+    image: 'photo-0jnmSeGzRRg',
     featured: false,
   },
 
