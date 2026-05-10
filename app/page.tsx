@@ -2,7 +2,8 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, type Variants } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion'
 import { useCart } from '@/lib/cart-context'
 import { categories } from '@/lib/categories'
 import { getFeaturedProducts } from '@/lib/products'
@@ -28,10 +29,14 @@ const fadeIn: Variants = {
 // Section: Hero
 // ---------------------------------------------------------------------------
 function HeroSection() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=1920&q=80"
           alt="Twin Falls Hardware store interior"
@@ -40,7 +45,7 @@ function HeroSection() {
           priority
         />
         <div className="absolute inset-0 bg-black/60" />
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -144,27 +149,32 @@ function CategoryGrid() {
             >
               <Link
                 href={`/products/${cat.id}`}
-                className="group block relative rounded overflow-hidden aspect-square"
+                className="group block relative rounded aspect-square overflow-hidden"
               >
-                <Image
-                  src={`https://images.unsplash.com/${cat.image}?auto=format&fit=crop&w=600&q=80`}
-                  alt={cat.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors" />
+                {/* Image */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <Image
+                    src={`https://images.unsplash.com/${cat.image}?auto=format&fit=crop&w=600&q=80`}
+                    alt={cat.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Subtle dark base overlay */}
+                  <div className="absolute inset-0 bg-black/35 transition-colors duration-300" />
+                </div>
 
-                {/* Label */}
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <span className="text-xl" aria-hidden="true">{cat.icon}</span>
-                    <span className="text-white font-black uppercase text-sm leading-tight tracking-wide">
-                      {cat.name}
-                    </span>
-                  </div>
-                  <span className="text-white/75 text-xs font-semibold">
-                    Shop {cat.name} →
+                {/* Emoji icon — top-left corner */}
+                <span
+                  className="absolute top-3 left-3 text-2xl z-10"
+                  aria-hidden="true"
+                >
+                  {cat.icon}
+                </span>
+
+                {/* Red hover overlay — slides up from bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-[#B91C1C]/80 py-3 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-10">
+                  <span className="text-white font-black uppercase text-base tracking-wide leading-tight">
+                    {cat.name}
                   </span>
                 </div>
               </Link>
